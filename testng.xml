@@ -1,0 +1,15 @@
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/p4/IdeaProjects/VisitorManagmentRequest">
+        <classes>
+            <class name="TestCases.LoginTest">
+                <methods>
+                    <include name="LoginSuccessful"/>
+                    <include name="chooselocate"/>
+                    <include name="NewVisitRequest0"/>
+                    <include name="Show"/>
+                    <include name="ContiuneTheAcceptance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

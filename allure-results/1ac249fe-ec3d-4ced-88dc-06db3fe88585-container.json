@@ -1,0 +1,1 @@
+{"uuid":"1ac249fe-ec3d-4ced-88dc-06db3fe88585","name":"TestCases.TestBase.OpenUrl","children":["9b8c56af-a884-4308-a4da-50720aade159"],"description":"","befores":[{"name":"OpenUrl","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1713353897042,"stop":1713353901857}],"afters":[],"start":1713353897042,"stop":1713353901857}
