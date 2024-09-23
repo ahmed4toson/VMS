@@ -5,8 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class HomePage {
     WebDriver driver;
-    private final By Requests =new By.ByCssSelector("i.menu-icon.flaticon2-calendar-6");
-
+    private final By Requests =new By.ByCssSelector("a.btnbtn-primary");
 
 
     public HomePage (WebDriver driver)
@@ -15,9 +14,8 @@ public class HomePage {
     }
 
 
-
     public void VisitorRequest ()
     {
-        driver.findElement(Requests).click();
+     //   driver.findElement(Requests).click();
     }
 }

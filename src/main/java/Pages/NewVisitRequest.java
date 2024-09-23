@@ -17,7 +17,7 @@ public class NewVisitRequest {
 
   WebDriver driver ;
 
- private final By SelectLocation = new By.ByCssSelector("select.select3.form-control.row.visit_type.select2-hidden-accessible"); //موقع المقابلة
+ private final By SelectLocation = new By.ByCssSelector("button.btn.btn-outline-light.m-0.dropdown-toggle.w-100"); //موقع المقابلة
   private final By SelectGate = new By.ByXPath("//*[@id=\"gate_id\"]");              // البوابة
   private final By SelectBuilding = new By.ByXPath("//select[@id=\"building_id\"]");  //المبني
   private final By SelectFloor = new By.ByXPath("//select[@id=\"floor_id\"]");   //الطابق
@@ -40,7 +40,6 @@ public class NewVisitRequest {
   {
       this.driver = driver;
   }
-
 
 
 
@@ -101,16 +100,16 @@ public class NewVisitRequest {
 
   }
 
-   public void SaveButton ()  {
-driver.findElement(ButtonSaveRequest).click();
+   public void SaveButton () throws InterruptedException {
+   Thread.sleep(1000);
+    Actions action = new Actions(driver);
+    WebElement we = driver.findElement(By.id("ButtonSaveRequest")); // Assuming "ButtonSaveRequest" is an ID, replace it with appropriate locator strategy if necessary
+    action.moveToElement(we).perform();
 
-//    Actions action = new Actions(driver);
-//    WebElement we = driver.findElement(ButtonSaveRequest );
-//    action.moveToElement(we).build().perform();
+ driver.findElement(ButtonSaveRequest).click();
 
-//    WebElement element= driver.findElement(ButtonSaveRequest);
-//   Actions actions = new Actions(driver);
-//   actions.moveToElement(element).build().perform();
+
+
 
 
 

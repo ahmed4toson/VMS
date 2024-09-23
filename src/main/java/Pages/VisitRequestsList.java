@@ -16,7 +16,6 @@ public class VisitRequestsList {
     private final By ClickHere = new By.ByXPath("//*[@id=\"contact-1\"]/div/div/table/tbody/tr/td[8]/a");  // أضغط هنا
 
 
-
     public VisitRequestsList(WebDriver driver)
     {
         this.driver = driver ;
@@ -35,6 +34,8 @@ public class VisitRequestsList {
 
    driver.findElement(ClickHere).click();
    driver.getWindowHandles().forEach(tab->driver.switchTo().window(tab));
+
+
 //
 //        WebElement ChooseWay = driver.findElement(ChooseTheWay);    //اختر طريقة الوصول
 //        Select select =new Select((WebElement) ChooseWay);

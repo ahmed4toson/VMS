@@ -11,12 +11,23 @@ public class CheckSite {
 
     WebDriver driver;
 
-    private final By locate = new By.ByCssSelector("select.nice-select.form-control.row.select2-hidden-accessible"); // تحديد الموقع
-  //  private final By chooselocate1 =new By.ByXPath("//li[@class='select2-results__option'][1]"); // اختيار الموقع
+    private final By chooseGate = By.id("select_site");
+
+
+
+
+  //  private final By locate = new By.ByCssSelector("select.nice-select.form-control.row.select2-hidden-accessible"); // تحديد الموقع
+    //  private final By chooselocate1 =new By.ByXPath("//li[@class='select2-results__option'][1]"); // اختيار الموقع
     private final By Submitsite =new By.ByXPath("//*[@id=\"submitSite\"]");             // الذهاب الي الرئيسة
     private final By visit = new By.ByXPath("//*[@id=\"kt_aside_menu\"]/ul/li[4]/a");     // التصاريح
     private final By visitRequestlist = new By.ByXPath("//*[@id=\"kt_aside_menu\"]/ul/li[4]/div/ul/li[2]/a/span");
 
+
+
+
+
+   //  private final By visit = new By.ByXPath("//*[@id=\"kt_aside_menu\"]/ul/li[2]/a/span");     // التصاريح
+   // private final By visitRequestlist = new By.ByXPath("//*[@id=\"kt_aside_menu\"]/ul/li[2]/div/ul/li[2]/a/span");
 
 
  public  CheckSite(WebDriver driver)
@@ -27,13 +38,11 @@ public class CheckSite {
 
 public void Chooselocate() {
 
-     WebElement LocateTheSite = driver.findElement(locate);        //   اختيار الموقع
-    Select select = new Select((WebElement) LocateTheSite);
-    select.selectByIndex(1);
 
-    driver.findElement(Submitsite).click();              //  الذهاب الي الرئيسية
+    Select select = new Select(driver.findElement(chooseGate) );
+    select.selectByIndex(2);
 
-    String expectedUrl = "https://vms-v2.wakeb.tech/ar/dashboard/reports";
+    String expectedUrl = "https://vms-stg.wakeb.tech/ar/dashboard/reports";
     String actualUrl = driver.getCurrentUrl();
     Assert.assertEquals(actualUrl, expectedUrl, "URLs do not match");
 
@@ -41,14 +50,8 @@ public void Chooselocate() {
     Actions actions = new Actions(driver);
     actions.moveToElement(element).build().perform();
 
-   driver.findElement(visitRequestlist).click();     // تصاريح الزيارات
-
-
-
-
+    driver.findElement(visitRequestlist).click();     // تصاريح الزيارات
 
 }
-
-
 
 }
